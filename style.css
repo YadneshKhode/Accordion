@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #34495e;
+  color: #fff;
+}
+h1 {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2.5rem;
+}
+.accordion {
+  margin: 2rem auto;
+  max-width: 1360px;
+  width: 90%;
+}
+.accordion-item {
+  background-color: white;
+  color: #111;
+  border-top: 5px solid #34495e;
+  border-radius: 1rem;
+  outline: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+}
+.accordion-item-header {
+  padding: 1rem 3rem 1rem 2rem;
+  position: relative;
+  line-height: 1.25rem;
+  min-height: 3.5rem;
+  font-weight: bolder;
+  cursor: pointer;
+  animation:scaleUpthePlus 1s ease-in-out;
+  transform-origin: 100px 10px;
+}
+.accordion-item-header::after {
+  content: "\002B";
+  font-size: 2rem;
+  position: absolute;
+  right: 1.5rem;
+}
+.accordion-item-header.active::after {
+  content: "\2212";
+}
+.accordion-item-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.2s ease-out;
+}
+.accordion-item-body-content{
+  padding: 1rem;
+  line-height: 1.5rem;
+  border-top: 3px solid;
+  /* border-image: linear-gradient(to right, #008f68,#fae042) 1; */
+  border-image: linear-gradient(to right,transparent,#34495e,transparent) 1;
+}
+.accordion-item-header.active + .accordion-item-body {
+max-height: 1000px;
+}
+@keyframes scaleUpthePlus {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
